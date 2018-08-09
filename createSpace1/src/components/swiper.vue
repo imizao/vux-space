@@ -1,7 +1,7 @@
 <template>
   <div>
     <div class="p10"></div>
-    <swiper :aspect-ratio="360/750" >
+    <swiper auto loop :aspect-ratio="360/750" >
       <swiper-item class="swiper-demo-img" v-for="(item, index) in demo04_list" :key="index"><img :src="item"></swiper-item>
     </swiper>
   </div>
@@ -16,17 +16,17 @@ const imgList = [
   '../../static/img/banner1.png',
   '../../static/img/banner1.png'
 ]
-  export default {
-    components: {
-      Swiper,
-      SwiperItem
-    },
-    data () {
-      return {
-        demo04_list: imgList
-      }
+export default {
+  components: {
+    Swiper,
+    SwiperItem
+  },
+  data () {
+    return {
+      demo04_list: imgList
     }
   }
+}
 </script>
 
 <style scoped>

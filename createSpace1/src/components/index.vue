@@ -3,6 +3,8 @@
     <a-head></a-head>
     <a-tab></a-tab>
     <a-swiper></a-swiper>
+    <router-view></router-view>
+    <!-- <m-content></m-content> -->
     <!-- <spinner type="ripple"></spinner> -->
   </div>
 </template>
@@ -11,6 +13,7 @@
  import aHead from './header'
  import aTab from './tab'
  import aSwiper from './swiper'
+//  import mContent from './mcontent'
 
  export default {
    components: {

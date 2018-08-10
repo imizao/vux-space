@@ -1,7 +1,7 @@
 <template>
    <div class="page page-current courseInfo">
         <div id="J_prismPlayer" >
-          <video id="video1" controls="controls" src="http://cloud.video.taobao.com/play/u/2554695624/p/1/e/6/t/1/fv/102/28552077.mp4" preload="auto" playsinline="" x-webkit-airplay="allow" x5-video-player-type="h5"  x5-video-player-fullscreen="true" x5-video-orientation="portraint" width="100%" height="100%" webkit-playsinline="true" playsinline="true" autoplay="true" >
+          <video id="video1" controls="controls" src="http://cloud.video.taobao.com/play/u/2554695624/p/1/e/6/t/1/fv/102/28552074" preload="auto" playsinline="" x-webkit-airplay="allow" x5-video-player-type="h5"  x5-video-player-fullscreen="true" x5-video-orientation="portraint" width="100%" height="100%" webkit-playsinline="true" playsinline="true" autoplay="true" >
             Your browser does not support the video tag.
           </video >
           <!-- <div  class="control">
@@ -16,7 +16,7 @@
 <script>
 // import {videoCount} from '../assets/js/api'
 export default {
-  data() {
+  data () {
     return {
       pgCurtime:0, //未格式化的当前播放时间
       pgTotalTime:0, //未格式化的总时间
@@ -27,27 +27,27 @@ export default {
   components: {
   },
   methods: {
-    bofang(){
-        var video=document.getElementById("video1");
-        var bofang=document.getElementById("bofang");
-        if(video.paused){
+    bofang (){
+        var video = document.getElementById("video1")
+        var bofang = document.getElementById("bofang")
+        if (video.paused) {
             video.play();
-            document.getElementById("bofang").innerHTML="暂停";
-        }else{
+            document.getElementById("bofang").innerHTML="暂停"
+        } else {
             video.pause();
-            document.getElementById("bofang").innerHTML="播放";
+            document.getElementById("bofang").innerHTML="播放"
            this.videoTime()  //暂停时将数据传给接口
         }
-        if(video.duration==video.currentTime){
+        if ( video.duration == video.currentTime){
           this.videoTime()
         }
     },
-    videoTime(){
+    videoTime (){
         let data = {
           watch_length:this.pgCurtime,
           total_time: this.pgTotalTime,
         }
-        let parame1 = qs.stringify(data);
+        let parame1 = qs.stringify(data)
         console.log(parame1);
         // videoCount(parame1).then((res) => {
         //   if (res.code == 0) {
@@ -57,19 +57,19 @@ export default {
         //   console.log(err)
         // })
     },
-    timeupdate(){
-        var video1=document.getElementById("video1");
+    timeupdate (){
+        var video1 = document.getElementById("video1")
         this.pgCurtime = video1.currentTime;
         this.pgTotalTime = video1.duration;
         this.CurtimeText = this.getFormatTime(video1.currentTime)
         this.TotalTimeText = this.getFormatTime(video1.duration)
     },
-    progressFun(){
-        var video1=document.getElementById("video1");
+    progressFun (){
+        var video1 = document.getElementById("video1");
         video1.currentTime = (event.offsetX / 205) * video1.duration
     },
     // <!-- 格式化时间为00:00:00这种形式 -->
-    getFormatTime(time) {
+    getFormatTime (time) {
         var time = time;
         var h = parseInt(time/3600),
             m = parseInt(time%3600/60),
@@ -86,14 +86,12 @@ export default {
     },
   },
 // 事实上有非常简单的方式，就是在created里增加监控时间
-  created() {
-     this.videoSrc = document.getElementById("video1");
+  created () {
+     this.videoSrc = document.getElementById("video1")
      var this1 =this
-
-
-     if(this.videoSrc==null){
+     if (this.videoSrc==null){
       setTimeout(function(){
-        var video =document.getElementById('video1');
+        var video = document.getElementById('video1')
         video.addEventListener("timeupdate",this1.timeupdate)  //iphone的时间进度条
         video.addEventListener('play',function(){
             alert("播放监控")

@@ -76,6 +76,10 @@ export default new Router({
       path: '/details',
       name: 'details',
       component: DetailsPage
+    },
+    {
+      path: '/column/index',
+      redirect: '/index',
     }
   ]
 })

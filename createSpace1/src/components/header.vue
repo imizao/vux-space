@@ -3,7 +3,7 @@
     <flexbox :gutter="0" class="h48">
       <flexbox-item :span="2.16">
         <div class="logo-box">
-          <div class="logo"></div>
+          <router-link to="index"><div class="logo"></div></router-link>
         </div>
       </flexbox-item>
       <flexbox-item :span="8.24">

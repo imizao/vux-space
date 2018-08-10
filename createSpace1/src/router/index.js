@@ -1,12 +1,16 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-import Home from '@/components/index'
+import Home from '@/components/main/index'
+import ColumnPage from '@/components/main/column-page'
+import DetailsPage from '@/components/main/details-page'
 import mContent from '@/views/con/mcontent'
 import Comic from '@/views/con/comic'
 import Interest from '@/views/con/interest'
 import Scientific from '@/views/con/scientific'
 import Intelligence from '@/views/con/intelligence'
-import ColumnPage from '@/components/column-page'
+import PageOne from '@/views/column/page-one'
+import PageTwo from '@/views/column/page-two'
+import PageThree from '@/views/column/page-three'
 
 Vue.use(Router)
 
@@ -48,7 +52,30 @@ export default new Router({
     {
       path: '/column',
       name: 'column',
-      component: ColumnPage
+      component: ColumnPage,
+      redirect: '/column/p1',
+      children: [
+        {
+          path: 'p1',
+          name: 'p1',
+          component: PageOne
+        },
+        {
+          path: 'p2',
+          name: 'p2',
+          component: PageTwo
+        },
+        {
+          path: 'p3',
+          name: 'p3',
+          component: PageThree
+        }
+      ]
+    },
+    {
+      path: '/details',
+      name: 'details',
+      component: DetailsPage
     }
   ]
 })

@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta http-equiv="content-type" content="text/html; charset=UTF-8">
+<meta name="viewport" content="initial-scale=1, maximum-scale=1">
+
+
+<title>Multi Source</title>
+</head>
+<body>
+<input type="text" id="showTime"/>
+<input type="text" placeholder="" />
+<video id="audio" width="100%" height="520" controls="controls" src="http://cloud.video.taobao.com/play/u/2554695624/p/1/e/6/t/1/fv/102/28552077.mp4"></video>
+<div>
+
+
+</div>
+<script>
+var video1=document.getElementById("audio");
+var bofang=document.getElementById("bofang");
+var yinliang=document.getElementById("yinliang");
+bofang.onclick=function(){
+    if(video1.paused){
+        video1.play();
+    }else{
+        video1.pause();
+        console.log(video1.currentTime)
+    }
+}
+yinliang.onclick=function(){
+    console.log()
+    video1.volume=0.5
+}
+
+
+var _endTime;
+video1.addEventListener("timeupdate",timeupdate);
+function timeupdate(){
+    //因为当前的格式是带毫秒的float类型的如：12.231233，所以把他转成String了便于后面分割取秒
+    var time = video1.currentTime+"";
+    document.getElementById("showTime").value=time;
+    var ts = time.substring(0,time.indexOf("."));
+    if(ts==_endTime){
+        video1.pause();
+    }
+
+}
+
+
+var init_num=0;
+var myvideo=document.getElementById('audio');
+myvideo.addEventListener('play',function(){
+    console.log(myvideo.currentTime)
+
+
+});
+myvideo.addEventListener('pause',function(){
+    console.log(myvideo.currentTime)
+
+
+});
+</script>
+</body>
+</html>

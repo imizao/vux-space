@@ -2,16 +2,10 @@
   <div>
     <flexbox :gutter="5">
       <flexbox-item :span="6">
-        <div class="con-img">
-          <img src="../../static/img/img.png" alt="">
-          <p class="con-p">闯堂家族</p>
-        </div>
+        <b-content></b-content>
       </flexbox-item>
       <flexbox-item :span="6">
-        <div class="con-img">
-          <img src="../../static/img/img.png" alt="">
-          <p class="con-p">闯堂家族</p>
-        </div>
+        <b-content></b-content>
       </flexbox-item>
     </flexbox>
   </div>
@@ -19,11 +13,13 @@
 
 <script>
 import { Flexbox, FlexboxItem } from 'vux'
+import bContent from './bcontent'
 
 export default {
   components: {
     Flexbox,
-    FlexboxItem
+    FlexboxItem,
+    bContent
   }
 }
 </script>

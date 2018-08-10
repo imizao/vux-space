@@ -1,15 +1,18 @@
 <template>
   <div>
     <a-header></a-header>
+    <a-video></a-video>
   </div>
 </template>
 
 <script>
-import aHeader from './header'
+import aHeader from '@/components/header'
+import aVideo from '@/components/video'
 
 export default {
   components: {
-    aHeader
+    aHeader,
+    aVideo
   }
 }
 </script>

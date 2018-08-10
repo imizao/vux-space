@@ -10,9 +10,9 @@
 </template>
 
 <script>
- import aHead from './header'
- import aTab from './tab'
- import aSwiper from './swiper'
+ import aHead from '@/components/header'
+ import aTab from '@/components/tab'
+ import aSwiper from '@/components/swiper'
 //  import mContent from './mcontent'
 
  export default {

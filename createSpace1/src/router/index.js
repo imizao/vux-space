@@ -3,6 +3,7 @@ import Router from 'vue-router'
 import Home from '@/components/main/index'
 import ColumnPage from '@/components/main/column-page'
 import DetailsPage from '@/components/main/details-page'
+import Mine from '@/components/main/mine'
 import mContent from '@/views/con/mcontent'
 import Comic from '@/views/con/comic'
 import Interest from '@/views/con/interest'
@@ -78,8 +79,17 @@ export default new Router({
       component: DetailsPage
     },
     {
+      path: '/mine',
+      name: 'mine',
+      component: Mine
+    },
+    {
       path: '/column/index',
       redirect: '/index',
+    },
+    {
+      path: '/column/mine',
+      redirect: '/mine',
     }
   ]
 })

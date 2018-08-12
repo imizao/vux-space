@@ -11,7 +11,7 @@
       </flexbox-item>
       <flexbox-item :span="1.6">
         <div class="mine-box">
-          <div class="mine"></div>
+          <router-link to="mine"><div class="mine"></div></router-link>
         </div>
       </flexbox-item>
     </flexbox>

@@ -7,17 +7,12 @@
     <a-content></a-content>
     <a-content></a-content>
     <group>
-      <cell title="热播动画" value="更多" :is-link="true"></cell>
+      <cell title="教学视频" value="更多" :is-link="true"></cell>
       <i class="icon1"></i>
     </group>
     <a-content></a-content>
     <a-content></a-content>
-    <group>
-      <cell title="热播动画" value="更多" :is-link="true"></cell>
-      <i class="icon1"></i>
-    </group>
-    <a-content></a-content>
-    <a-content></a-content>
+
     <div class="p10"></div>
   </div>
 </template>

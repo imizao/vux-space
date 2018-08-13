@@ -5,7 +5,7 @@
             Your browser does not support the video tag.
           </video >
           <!-- <div  class="control">
-            <span id="bofang" @click="bofang()">播放</span>
+            <span id="aplay" @click="aplay()">播放</span>
             {{this.CurtimeText}}
             <progress v-bind:value="this.pgCurtime" v-bind:max="this.pgTotalTime" @click="progressFun($event)"></progress>
             {{this.TotalTimeText}}
@@ -27,28 +27,28 @@ export default {
   components: {
   },
   methods: {
-    bofang (){
-        var video = document.getElementById("video1")
-        var bofang = document.getElementById("bofang")
-        if (video.paused) {
-            video.play();
-            document.getElementById("bofang").innerHTML="暂停"
-        } else {
-            video.pause();
-            document.getElementById("bofang").innerHTML="播放"
-           this.videoTime()  //暂停时将数据传给接口
-        }
-        if ( video.duration == video.currentTime){
-          this.videoTime()
-        }
-    },
+    // aplay (){
+    //     var video = document.getElementById("video1")
+    //     // var aPlay = document.getElementById("aplay")
+    //     if (video.paused) {
+    //         video.play()
+    //         document.getElementById("aplay").innerHTML="暂停"
+    //     } else {
+    //         video.pause()
+    //         document.getElementById("aplay").innerHTML="播放"
+    //        this.videoTime()  //暂停时将数据传给接口
+    //     }
+    //     if ( video.duration == video.currentTime){
+    //       this.videoTime()
+    //     }
+    // },
     videoTime (){
         let data = {
           watch_length:this.pgCurtime,
           total_time: this.pgTotalTime,
         }
         let parame1 = qs.stringify(data)
-        console.log(parame1);
+        console.log(parame1)
         // videoCount(parame1).then((res) => {
         //   if (res.code == 0) {
         //     console.log("提交成功")
@@ -59,13 +59,13 @@ export default {
     },
     timeupdate (){
         var video1 = document.getElementById("video1")
-        this.pgCurtime = video1.currentTime;
-        this.pgTotalTime = video1.duration;
+        this.pgCurtime = video1.currentTime
+        this.pgTotalTime = video1.duration
         this.CurtimeText = this.getFormatTime(video1.currentTime)
         this.TotalTimeText = this.getFormatTime(video1.duration)
     },
     progressFun (){
-        var video1 = document.getElementById("video1");
+        var video1 = document.getElementById("video1")
         video1.currentTime = (event.offsetX / 205) * video1.duration
     },
     // <!-- 格式化时间为00:00:00这种形式 -->

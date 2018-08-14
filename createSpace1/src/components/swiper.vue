@@ -11,10 +11,10 @@
 import { Swiper, SwiperItem } from 'vux'
 
 const imgList = [
-  '../../static/img/banner1.png',
-  '../../static/img/banner1.png',
-  '../../static/img/banner1.png',
-  '../../static/img/banner1.png'
+  'static/img/index/program1.png',
+  'static/img/index/program2.png',
+  'static/img/index/program3.png',
+  'static/img/index/program4.png'
 ]
 export default {
   components: {

@@ -2,7 +2,7 @@
   <div>
     <router-link to="/details">
         <div class="con-img">
-          <img src="../../static/img/img.png" alt="">
+          <img src="static/img/img.png" alt="">
           <p class="con-p">闯堂家族</p>
         </div>
       </router-link>

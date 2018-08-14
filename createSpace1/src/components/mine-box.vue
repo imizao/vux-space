@@ -4,7 +4,7 @@
     <p class="mine-name">爱吃鱼的小猫</p>
     <div class="vip-box">
       <span class="vip-icon"></span>
-      <p class="vip-text">升级成为vip</p>
+      <p class="vip-text">升级成为VIP</p>
     </div>
     <div class="num-box">
       2300
@@ -48,7 +48,10 @@
         </div>
       </div>
     </div>
-    <div class=""></div>
+    <div class="sign-in">
+      立即签到
+    </div>
+    <p class="sign-text">每日签到即可获得10个积分</p>
   </div>
 </template>
 
@@ -196,11 +199,12 @@ export default {
 .day-text{
   position: absolute;
   top: 20px;
+  left: -5px;
   color: #fff;
   display: none;
 }
 .active .day{
-
+  box-shadow: 0 0 6px 0 rgba(0, 0, 0, 0.5);
   background: #ffd827;
 }
 .active .i-icon{
@@ -209,5 +213,23 @@ export default {
 }
 .active .day-text{
   display: block;
+}
+.sign-in{
+  margin: 3px auto;
+  width: 150px;
+  height: 44px;
+  border-radius: 22px;
+  background-image: linear-gradient(to bottom, #ffee1a, #e16707);
+  box-shadow: 0 2px 10px 0 rgba(80, 71, 69, 0.4);
+  text-align: center;
+  line-height: 44px;
+  font-size: 17px;
+  color: #fff;
+}
+.sign-text{
+  text-align: center;
+  color: #fff;
+  opacity: .8;
+  font-size: 14px;
 }
 </style>

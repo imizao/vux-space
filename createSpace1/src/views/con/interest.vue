@@ -1,36 +1,46 @@
 <template>
   <div class="comic">
-    <group>
-      <cell title="热播动画" value="更多" :is-link="true"></cell>
-      <i class="icon2"></i>
-    </group>
-    <a-content></a-content>
-    <a-content></a-content>
-    <group>
-      <cell title="热播动画" value="更多" :is-link="true"></cell>
-      <i class="icon2"></i>
-    </group>
-    <a-content></a-content>
-    <a-content></a-content>
-    <group>
-      <cell title="热播动画" value="更多" :is-link="true"></cell>
-      <i class="icon2"></i>
-    </group>
-    <a-content></a-content>
-    <a-content></a-content>
+    <div v-for="(item,index) in data" :key="index">
+      <group>
+        <cell :title="item.title" value="更多" :is-link="true"></cell>
+        <i class="icon2"></i>
+      </group>
+      <flexbox :gutter="5" v-for="(item1,index) in item.data" :key="index">
+        <flexbox-item :span="6" v-for="(item2, index) in item1.data" :key="index">
+          <b-content :data="item2"></b-content>
+        </flexbox-item>
+      </flexbox>
+    </div>
     <div class="p10"></div>
   </div>
 </template>
 
 <script>
-import { Group, Cell } from 'vux'
-import aContent from '@/components/acontent'
+import { Group, Cell, Flexbox, FlexboxItem } from 'vux'
+import bContent from '@/components/bcontent'
 export default {
   components: {
     Group,
     Cell,
-    aContent
-  }
+    Flexbox,
+    FlexboxItem,
+    bContent
+  },
+  data () {
+    return {
+      data: ''
+    }
+  },
+  beforeCreate () {
+    this.$http.get('/scientific')
+    .then(response => {
+      this.data = response.data.data
+      console.log(this.data)
+    })
+    .catch(function (code) {
+      console.log(code)
+    });
+  },
 }
 </script>
 
@@ -61,5 +71,19 @@ export default {
   width: 100%;
   height: 10px;
   background: #f0f3f7;
+}
+.con-img img{
+  width: 100%;
+}
+.con-p{
+  height: 23px;
+  line-height: 19px;
+  font-size: 14px;
+  text-indent: 10px;
+  color: #333;
+}
+.vux-flex-row{
+  overflow-x: hidden;
+  background: #fff;
 }
 </style>

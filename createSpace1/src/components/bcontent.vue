@@ -1,9 +1,9 @@
 <template>
   <div>
-    <router-link to="/details">
+    <router-link :to="data.url">
         <div class="con-img">
-          <img src="static/img/img.png" alt="">
-          <p class="con-p">闯堂家族</p>
+          <img :src="'static/img/index/'+data.img" alt="">
+          <p class="con-p">{{data.name}}</p>
         </div>
       </router-link>
   </div>
@@ -11,7 +11,7 @@
 
 <script>
 export default {
-
+  props: ['data'],
 }
 </script>
 

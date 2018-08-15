@@ -7,6 +7,10 @@ const baseWebpackConfig = require('./webpack.base.conf')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const portfinder = require('portfinder')
+const express = require('express')
+const app = express()
+const newsData = require('../api/index.json')
+const scientific = require('../api/seconde.json')
 
 const devWebpackConfig = merge(baseWebpackConfig, {
   module: {
@@ -33,6 +37,18 @@ const devWebpackConfig = merge(baseWebpackConfig, {
     quiet: true, // necessary for FriendlyErrorsPlugin
     watchOptions: {
       poll: config.dev.poll,
+    },
+    before(app) {
+      app.get('/index', function (req, res) {
+        res.json({
+          data: newsData.data
+        })
+      }),
+      app.get('/scientific', function (req, res) {
+        res.json({
+          data: scientific.data
+        })
+      })
     }
   },
   plugins: [

@@ -18,13 +18,11 @@
 export default {
   data () {
     return {
-      pgCurtime:0, //未格式化的当前播放时间
-      pgTotalTime:0, //未格式化的总时间
-      CurtimeText:'00:00', //格式化的当前播放时间
-      TotalTimeText:'00:00',//未格式化的总时间
+      pgCurtime: 0, //未格式化的当前播放时间
+      pgTotalTime: 0, //未格式化的总时间
+      CurtimeText: '00:00', //格式化的当前播放时间
+      TotalTimeText: '00:00',//未格式化的总时间
     }
-  },
-  components: {
   },
   methods: {
     // aplay (){
@@ -42,9 +40,9 @@ export default {
     //       this.videoTime()
     //     }
     // },
-    videoTime (){
+    videoTime () {
         let data = {
-          watch_length:this.pgCurtime,
+          watch_length: this.pgCurtime,
           total_time: this.pgTotalTime,
         }
         let parame1 = qs.stringify(data)
@@ -57,50 +55,50 @@ export default {
         //   console.log(err)
         // })
     },
-    timeupdate (){
+    timeupdate () {
         var video1 = document.getElementById("video1")
         this.pgCurtime = video1.currentTime
         this.pgTotalTime = video1.duration
         this.CurtimeText = this.getFormatTime(video1.currentTime)
         this.TotalTimeText = this.getFormatTime(video1.duration)
     },
-    progressFun (){
+    progressFun () {
         var video1 = document.getElementById("video1")
         video1.currentTime = (event.offsetX / 205) * video1.duration
     },
     // <!-- 格式化时间为00:00:00这种形式 -->
     getFormatTime (time) {
-        var time = time;
+        var time = time
         var h = parseInt(time/3600),
             m = parseInt(time%3600/60),
-            s = parseInt(time%60);
-        h = h < 10 ? "0"+h : h;
-        m = m < 10 ? "0"+m : m;
-        s = s < 10 ? "0"+s : s;
-        console.log(h+":"+m+":"+s)
-        if(h=='00'){
-          return m+":"+s;
-        }else{
-          return h+":"+m+":"+s;
+            s = parseInt(time%60)
+        h = h < 10 ? "0"+h : h
+        m = m < 10 ? "0"+m : m
+        s = s < 10 ? "0"+s : s
+        console.log( h + ":" + m + ":" + s )
+        if (h =='00'){
+          return m + ":" + s
+        } else {
+          return h + ":" + m + ":" + s
         }
     },
   },
 // 事实上有非常简单的方式，就是在created里增加监控时间
   created () {
      this.videoSrc = document.getElementById("video1")
-     var this1 =this
-     if (this.videoSrc==null){
+     var this1 = this
+     if (this.videoSrc == null){
       setTimeout(function(){
         var video = document.getElementById('video1')
-        video.addEventListener("timeupdate",this1.timeupdate)  //iphone的时间进度条
-        video.addEventListener('play',function(){
+        video.addEventListener("timeupdate", this1.timeupdate)  //iphone的时间进度条
+        video.addEventListener('play', function () {
             alert("播放监控")
-        });
-        video.addEventListener('pause',function(){
+        })
+        video.addEventListener('pause', function () {
             this1.videoTime()  //当用户暂停时，调用方法将数据传给接口
-        });
+        })
 
-      },5000);
+      }, 5000)
      }
   },
 }

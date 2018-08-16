@@ -12,6 +12,8 @@ import Intelligence from '@/views/con/intelligence'
 import PageOne from '@/views/column/page-one'
 import PageTwo from '@/views/column/page-two'
 import PageThree from '@/views/column/page-three'
+import aHistory from '@/views/mine/history'
+import aGift from '@/views/mine/gift'
 
 Vue.use(Router)
 
@@ -72,6 +74,16 @@ export default new Router({
           component: PageThree
         }
       ]
+    },
+    {
+      path: '/history',
+      name: 'history',
+      component: aHistory
+    },
+    {
+      path: '/gift',
+      name: 'gift',
+      component: aGift
     },
     {
       path: '/details',

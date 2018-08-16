@@ -3,13 +3,13 @@
     <a-header></a-header>
     <mine-box></mine-box>
     <group>
-      <cell title="积分换好礼" is-link>
+      <cell title="积分换好礼" is-link link="/gift">
         <img slot="icon" width="40" height="40" style="display:block;margin-right:5px;" src="static/img/gift.png" alt="">
       </cell>
       <cell title="我的收藏" is-link>
         <img slot="icon" width="40" height="40" style="display:block;margin-right:5px;" src="static/img/love.png" alt="">
       </cell>
-      <cell title="历史记录" is-link>
+      <cell title="历史记录" is-link link="/history">
         <img slot="icon" width="40" height="40" style="display:block;margin-right:5px;" src="static/img/history.png" alt="">
       </cell>
       <cell title="礼品兑换记录" value="收货地址填写" is-link>

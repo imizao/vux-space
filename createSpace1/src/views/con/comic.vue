@@ -39,7 +39,7 @@ export default {
     })
     .catch(function (code) {
       console.log(code)
-    });
+    })
   },
 }
 </script>
@@ -64,7 +64,7 @@ export default {
   top: 12px;
   width: 30px;
   height: 17px;
-  background: url('../../../static/img/comic-icon1.png') no-repeat;
+  background: url('../../../static/img/decoration1.png') no-repeat;
   background-size: 100%;
 }
 .p10{

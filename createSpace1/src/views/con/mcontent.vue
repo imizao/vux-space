@@ -36,7 +36,7 @@ export default {
     })
     .catch(function (code) {
       console.log(code)
-    });
+    })
   },
   methods: {
 

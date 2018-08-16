@@ -3,7 +3,7 @@
     <div v-for="(item,index) in data" :key="index">
       <group>
         <cell :title="item.title" value="更多" :is-link="true"></cell>
-        <i class="icon1"></i>
+        <i class="icon3"></i>
       </group>
       <flexbox :gutter="5" v-for="(item1,index) in item.data" :key="index">
         <flexbox-item :span="6" v-for="(item2, index) in item1.data" :key="index">
@@ -39,7 +39,7 @@ export default {
     })
     .catch(function (code) {
       console.log(code)
-    });
+    })
   },
 }
 </script>
@@ -58,13 +58,13 @@ export default {
 .comic .weui-cell_access .weui-cell__ft{
   font-size: 12px;
 }
-.comic .icon1{
+.comic .icon3{
   position: absolute;
   left: 10px;
   top: 12px;
   width: 30px;
   height: 17px;
-  background: url('../../../static/img/comic-icon1.png') no-repeat;
+  background: url('../../../static/img/decoration3.png') no-repeat;
   background-size: 100%;
 }
 .p10{

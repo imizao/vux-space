@@ -2,8 +2,8 @@
   <div>
     <a-header :name="name"></a-header>
     <div class="p10"></div>
-    <flexbox :gutter="5" >
-      <flexbox-item v-for="(item,index) in data" :key="index">
+    <flexbox :gutter="5" v-for="(item,index) in data" :key="index">
+      <flexbox-item v-for="(item,index) in item.data" :key="index">
         <div class="gift-box">
           <img :src="'static/img/'+item.img" alt="">
           <div class="text-box">
@@ -14,28 +14,7 @@
         </div>
       </flexbox-item>
     </flexbox>
-    <flexbox :gutter="5">
-      <flexbox-item>
-        <div class="gift-box">
-          <img src="static/img/gift1.jpg" alt="">
-          <div class="text-box">
-            2800
-            <span class="a-text">积分</span>
-            <i class="right-icon"></i>
-          </div>
-        </div>
-      </flexbox-item>
-      <flexbox-item>
-        <div class="gift-box">
-          <img src="static/img/gift1.jpg" alt="">
-          <div class="text-box">
-            2800
-            <span class="a-text">积分</span>
-            <i class="right-icon"></i>
-          </div>
-        </div>
-      </flexbox-item>
-    </flexbox>
+    <div class="p10"></div>
   </div>
 </template>
 
@@ -45,14 +24,60 @@ import aHeader from '@/components/mini/header'
 
 const aData = [
   {
-    'num': 2800,
-    'img': 'gift1.jpg',
-    'url': '/index'
+    'data': [
+      {
+        'num': 2800,
+        'img': 'gift1.jpg',
+        'url': '/index'
+      },
+      {
+        'num': 2800,
+        'img': 'gift1.jpg',
+        'url': '/index'
+      }
+    ]
   },
   {
-    'num': 2800,
-    'img': 'gift1.jpg',
-    'url': '/index'
+    'data': [
+      {
+        'num': 2800,
+        'img': 'gift1.jpg',
+        'url': '/index'
+      },
+      {
+        'num': 2800,
+        'img': 'gift1.jpg',
+        'url': '/index'
+      }
+    ]
+  },
+  {
+    'data': [
+      {
+        'num': 2800,
+        'img': 'gift1.jpg',
+        'url': '/index'
+      },
+      {
+        'num': 2800,
+        'img': 'gift1.jpg',
+        'url': '/index'
+      }
+    ]
+  },
+  {
+    'data': [
+      {
+        'num': 2800,
+        'img': 'gift1.jpg',
+        'url': '/index'
+      },
+      {
+        'num': 2800,
+        'img': 'gift1.jpg',
+        'url': '/index'
+      }
+    ]
   }
 ]
 export default {
@@ -63,7 +88,7 @@ export default {
   },
   data () {
     return {
-      name: '积分兑好礼',
+      name: '兑换商品',
       data: aData
     }
   }

@@ -14,6 +14,7 @@ import PageTwo from '@/views/column/page-two'
 import PageThree from '@/views/column/page-three'
 import aHistory from '@/views/mine/history'
 import aGift from '@/views/mine/gift'
+import Exchange from '@/views/mine/exchange'
 
 Vue.use(Router)
 
@@ -84,6 +85,11 @@ export default new Router({
       path: '/gift',
       name: 'gift',
       component: aGift
+    },
+    {
+      path: '/exchange',
+      name: 'exchange',
+      component: Exchange
     },
     {
       path: '/details',

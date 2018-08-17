@@ -12,7 +12,7 @@
       <cell title="历史记录" is-link link="/history">
         <img slot="icon" width="40" height="40" style="display:block;margin-right:5px;" src="static/img/history.png" alt="">
       </cell>
-      <cell title="礼品兑换记录" value="收货地址填写" is-link>
+      <cell title="礼品兑换记录" value="收货地址填写" is-link link="/exchange">
         <img slot="icon" width="40" height="40" style="display:block;margin-right:5px;" src="static/img/gift1.png" alt="">
       </cell>
       <cell title="我的视频" value="录制视频共享至电视" is-link>

@@ -1,106 +1,30 @@
 <template>
    <div class="page page-current courseInfo">
         <div id="J_prismPlayer" >
-          <video id="video1" controls="controls" src="http://cloud.video.taobao.com/play/u/2554695624/p/1/e/6/t/1/fv/102/28552074" preload="auto" playsinline="" x-webkit-airplay="allow" x5-video-player-type="h5"  x5-video-player-fullscreen="true" x5-video-orientation="portraint" width="100%" height="100%" webkit-playsinline="true" playsinline="true" autoplay="true" >
+          <video id="video1" controls="controls" :src="videoUrl" preload="auto" playsinline="" x-webkit-airplay="allow" x5-video-player-type="h5"  x5-video-player-fullscreen="true" x5-video-orientation="portraint" width="100%" height="100%" webkit-playsinline="true" playsinline="true" autoplay="true" >
             Your browser does not support the video tag.
           </video >
-          <!-- <div  class="control">
-            <span id="aplay" @click="aplay()">播放</span>
-            {{this.CurtimeText}}
-            <progress v-bind:value="this.pgCurtime" v-bind:max="this.pgTotalTime" @click="progressFun($event)"></progress>
-            {{this.TotalTimeText}}
-          </div> -->
         </div>
+        <!-- <button class="btn" @click="aClick(0)">飞鱼</button>
+        <button class="btn" @click="aClick(1)">720</button>
+        <button class="btn" @click="aClick(2)">1920(默认)</button>
+        <button class="btn" @click="aClick(3)">1920</button>
+        <button class="btn" @click="aClick(4)">腾讯云</button> -->
     </div>
 </template>
 <script>
-// import {videoCount} from '../assets/js/api'
 export default {
   data () {
     return {
-      pgCurtime: 0, //未格式化的当前播放时间
-      pgTotalTime: 0, //未格式化的总时间
-      CurtimeText: '00:00', //格式化的当前播放时间
-      TotalTimeText: '00:00',//未格式化的总时间
+      videoList: ['http://www.isjs.net/feiyu.mp4','http://www.isjs.net/720720.mp4','http://www.isjs.net/a1920.mp4','http://www.isjs.net/7201920.mp4', 'http://1256976636.vod2.myqcloud.com/20d64332vodgzp1256976636/1af5fd787447398156965268702/f0.mp4'],
+      videoUrl: 'http://1256976636.vod2.myqcloud.com/20d64332vodgzp1256976636/1af5fd787447398156965268702/f0.mp4'
     }
   },
   methods: {
-    // aplay (){
-    //     var video = document.getElementById("video1")
-    //     // var aPlay = document.getElementById("aplay")
-    //     if (video.paused) {
-    //         video.play()
-    //         document.getElementById("aplay").innerHTML="暂停"
-    //     } else {
-    //         video.pause()
-    //         document.getElementById("aplay").innerHTML="播放"
-    //        this.videoTime()  //暂停时将数据传给接口
-    //     }
-    //     if ( video.duration == video.currentTime){
-    //       this.videoTime()
-    //     }
-    // },
-    videoTime () {
-        let data = {
-          watch_length: this.pgCurtime,
-          total_time: this.pgTotalTime,
-        }
-        let parame1 = qs.stringify(data)
-        console.log(parame1)
-        // videoCount(parame1).then((res) => {
-        //   if (res.code == 0) {
-        //     console.log("提交成功")
-        //   }
-        // }).catch((err) => {
-        //   console.log(err)
-        // })
-    },
-    timeupdate () {
-        var video1 = document.getElementById("video1")
-        this.pgCurtime = video1.currentTime
-        this.pgTotalTime = video1.duration
-        this.CurtimeText = this.getFormatTime(video1.currentTime)
-        this.TotalTimeText = this.getFormatTime(video1.duration)
-    },
-    progressFun () {
-        var video1 = document.getElementById("video1")
-        video1.currentTime = (event.offsetX / 205) * video1.duration
-    },
-    // <!-- 格式化时间为00:00:00这种形式 -->
-    getFormatTime (time) {
-        var time = time
-        var h = parseInt(time/3600),
-            m = parseInt(time%3600/60),
-            s = parseInt(time%60)
-        h = h < 10 ? "0"+h : h
-        m = m < 10 ? "0"+m : m
-        s = s < 10 ? "0"+s : s
-        console.log( h + ":" + m + ":" + s )
-        if (h =='00'){
-          return m + ":" + s
-        } else {
-          return h + ":" + m + ":" + s
-        }
-    },
-  },
-// 事实上有非常简单的方式，就是在created里增加监控时间
-  created () {
-     this.videoSrc = document.getElementById("video1")
-     var this1 = this
-     if (this.videoSrc == null){
-      setTimeout(function(){
-        var video = document.getElementById('video1')
-        video.addEventListener("timeupdate", this1.timeupdate)  //iphone的时间进度条
-        video.addEventListener('play', function () {
-            alert("播放监控")
-        })
-        video.addEventListener('pause', function () {
-            this1.videoTime()  //当用户暂停时，调用方法将数据传给接口
-        })
-
-      }, 5000)
-     }
-  },
+    aClick (index) {
+      this.videoUrl = this.videoList[index]
+    }
+  }
 }
 </script>
 
@@ -113,6 +37,19 @@ export default {
   background: #000;
   width: 100%;
   overflow: hidden;
+}
+.btn{
+  margin: 20px auto 0;
+  width: 17%;
+  height: 44px;
+  border-radius: 22px;
+  background-image: linear-gradient(to bottom, #4ac1ff, #248dff);
+  box-shadow: 0 4px 12px 0 rgba(0, 0, 0, 0.3);
+  text-align: center;
+  line-height: 44px;
+  font-size: 17px;
+  letter-spacing: 0.4px;
+  color: #ffffff;
 }
 .control {
   height: 45px;

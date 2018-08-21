@@ -28,7 +28,7 @@ export default {
     return {
       name: '收货人地址填写',
       addressData: ChinaAddressData,
-      addressValue: [],
+      addressValue: ['广东省', '深圳市', '南山区'],
       value1: '',
       value2: ''
     }

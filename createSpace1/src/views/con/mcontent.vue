@@ -31,6 +31,7 @@ export default {
     this.$http.get('/index')
     .then(response => {
       this.data = response.data.data
+      console.log(this.data)
       this.aLength = this.data.length / 2
       console.log(this.data.length)
     })

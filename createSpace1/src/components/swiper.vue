@@ -2,7 +2,7 @@
   <div>
     <div class="p10"></div>
     <swiper auto loop :aspect-ratio="360/750" >
-      <swiper-item class="swiper-demo-img" v-for="(item, index) in demo04_list" :key="index"><img :src="item"></swiper-item>
+      <swiper-item class="swiper-demo-img" v-for="(item, index) in demo04_list" :key="index"><router-link to="/details"><img :src="item"></router-link></swiper-item>
     </swiper>
   </div>
 </template>

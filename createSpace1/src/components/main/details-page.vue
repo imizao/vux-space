@@ -9,30 +9,76 @@
       <cell title="相关推荐" ></cell>
       <i class="icon1"></i>
     </group>
-    <a-content></a-content>
-    <a-content></a-content>
+    <flexbox :gutter="5" v-for="(item, index) in data" :key="index">
+      <flexbox-item :span="6" v-for="(m, n) in item.data" :key="n">
+        <b-content :data="m"></b-content>
+      </flexbox-item>
+    </flexbox>
     <div class="p10"></div>
   </div>
 </template>
 
 <script>
-import { Group, Cell } from 'vux'
+import { Flexbox, FlexboxItem, Group, Cell } from 'vux'
 import aHeader from '@/components/header'
 import aVideo from '@/components/video'
 import DetailsTxt from '@/components/details-txt'
 import DetailsCon from '@/components/details-con'
-import aContent from '@/components/acontent'
+import bContent from '@/components/bcontent'
+
+const aData = {
+  "data": [
+    {
+      "data": [
+        {
+          "img": "program5.png",
+          "name": "闯堂兔",
+          "url": "/details"
+        },
+        {
+          "img": "program6.png",
+          "name": "玩具总动员",
+          "url": "/details"
+        }
+      ]
+    },
+    {
+      "data": [
+        {
+          "img": "program7.png",
+          "name": "东南特卫队",
+          "url": "/details"
+        },
+        {
+          "img": "program8.png",
+          "name": "吃饭睡觉打豆豆",
+          "url": "/details"
+        }
+      ]
+    }
+  ]
+}
 
 export default {
   components: {
+    Flexbox,
+    FlexboxItem,
     Group,
     Cell,
     aHeader,
     aVideo,
     DetailsTxt,
     DetailsCon,
-    aContent
-  }
+    bContent
+  },
+  data () {
+    return {
+      data: aData.data
+    }
+  },
+  created() {
+    console.log(this.data);
+  },
 }
 </script>
 

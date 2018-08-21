@@ -5,13 +5,21 @@
       <div class="name">张三 123123123</div>
       <div class="address">广东省深圳市南山区xxxxxx</div>
       <i class="address-icon"></i>
-      <p class="add-text">去编辑</p>
+      <router-link to="address"><p class="add-text">去编辑</p></router-link>
       <i class="right-icon1"></i>
       <i class="address-l"></i>
       <i class="address-r"></i>
     </div>
     <div class="p10"></div>
-    <div class="p10"></div>
+    <gift-list></gift-list>
+    <gift-list></gift-list>
+    <gift-list></gift-list>
+    <gift-list></gift-list>
+    <gift-list></gift-list>
+    <gift-list></gift-list>
+    <gift-list></gift-list>
+    <gift-list></gift-list>
+    <gift-list></gift-list>
     <div class="p10"></div>
   </div>
 </template>
@@ -19,11 +27,13 @@
 <script>
 import { Group, Cell } from 'vux'
 import aHeader from '@/components/mini/header'
+import GiftList from '@/components/mini/gift-list'
 export default {
   components: {
     Group,
     Cell,
-    aHeader
+    aHeader,
+    GiftList
   },
   data () {
     return {
@@ -93,5 +103,10 @@ export default {
   transform: rotate(135deg);
   border-radius: 2px;
   background-color: #666666;
+}
+.p10{
+  width: 100%;
+  height: 10px;
+  background: #fbf9fe;
 }
 </style>

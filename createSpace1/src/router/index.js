@@ -16,6 +16,7 @@ import aHistory from '@/views/mine/history'
 import aGift from '@/views/mine/gift'
 import Exchange from '@/views/mine/exchange'
 import Address from '@/views/mine/address'
+import Collection from '@/views/mine/collection'
 
 Vue.use(Router)
 
@@ -101,6 +102,11 @@ export default new Router({
       path: '/details',
       name: 'details',
       component: DetailsPage
+    },
+    {
+      path: '/collection',
+      name: 'collection',
+      component: Collection
     },
     {
       path: '/mine',

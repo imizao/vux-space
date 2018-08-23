@@ -6,6 +6,7 @@ import FastClick from 'fastclick'
 import axios from 'axios'
 import App from './App'
 import router from './router/index'
+
 // import Home from './components/HelloFromVux'
 
 // Vue.use(VueRouter)

@@ -14,43 +14,73 @@
     </div>
     <div class="p10"></div>
     <div class="col-box">
-      <div class="col-l">
-        <img src="static/img/index/program5.png" alt="">
+      <div class="col-l" v-for="(item, index) in fruits" :key="index">
+        <img :src="'static/img/index/'+item.img" alt="">
         <div class="col-name">
-          闯堂兔
-          <div class="b-active" :class="{display: aActive}"><span class="col-icon" @click="iActive()" :class="{active: isActive}"></span></div>
+          {{item.name}}
+          <div class="check_css3" :class="{display: aActive}">
+            <span><input type="checkbox" class="input_check" :checked="fruitIds.indexOf(item.fruitId) > -1" :id="'check'+item.fruitId"  @click='checkedOne(item.fruitId)' name="del" >
+              <label :for="'check'+item.fruitId"></label>
+            </span>
+          </div>
         </div>
       </div>
-      <div class="col-l">
-        <img src="static/img/index/program5.png" alt="">
-        <div class="col-name">
-          闯堂兔
-          <div class="b-active" :class="{display: aActive}"><span class="col-icon" @click="iActive()" :class="{active: isActive}"></span></div>
-        </div>
-      </div>
-      <div class="col-l">
-        <img src="static/img/index/program5.png" alt="">
-        <div class="col-name">
-          闯堂兔
-          <div class="b-active" :class="{display: aActive}"><span class="col-icon" @click="iActive()" :class="{active: isActive}"></span></div>
-        </div>
-      </div>
-
     </div>
+    <div class="check-box" :class="{display: aActive}">
+      <div class="check-all" @click='checkedAll()'>全选</div>
+      <div class="check-del" @click="deleteFruits()">删除({{newList.length}})</div>
+      <span class="check-lie"></span>
+    </div>
+    <a-add></a-add>
   </div>
 </template>
 
 <script>
-
+import aAdd from './add'
 export default {
   components: {
-
+    aAdd
   },
   data () {
     return {
       isActive: false,
       aActive: false,
-      bActive: true
+      bActive: true,
+      fruits: [
+        {
+          fruitId:'0',
+          img: 'program5.png',
+          url: '/detail',
+          name:'闯堂兔'
+        },
+        {
+          fruitId:'1',
+          img: 'program9.png',
+          url: '/detail',
+          name:'闯堂兔'
+        },
+        {
+          fruitId:'2',
+          img: 'program6.png',
+          url: '/detail',
+          name:'闯堂兔'
+        },
+        {
+          fruitId:'3',
+          img: 'program7.png',
+          url: '/detail',
+          name:'闯堂兔'
+        },
+        {
+          fruitId:'4',
+          img: 'program8.png',
+          url: '/detail',
+          name:'闯堂兔'
+        }
+      ],
+      fruitIds: [],
+      newList: [],
+      isCheckedAll: false
     }
   },
   methods: {
@@ -58,9 +88,55 @@ export default {
       this.aActive = !this.aActive
       this.bActive = !this.bActive
     },
-    iActive () {
-      this.isActive = !this.isActive
+    CheckItem: function(item){
+      item.state = !item.state;
+      console.log(this.items);
+    },
+    checkedOne (fruitId) {
+        let idIndex = this.fruitIds.indexOf(fruitId)
+        if (idIndex >= 0) {
+          // 如果已经包含了该id, 则去除(单选按钮由选中变为非选中状态)
+          this.fruitIds.splice(idIndex, 1)
+          console.log(this.fruitIds)
+        } else {
+          // 选中该checkbox
+          this.fruitIds.push(fruitId)
+          console.log(this.fruitIds)
+        }
+    },
+    checkedAll () {
+      this.isCheckedAll = !this.isCheckedAll
+      if (this.isCheckedAll) {
+        // 全选时
+        this.fruitIds = []
+        this.fruits.forEach(function (fruit) {
+          this.fruitIds.push(fruit.fruitId)
+        }, this)
+        console.log(this.fruitIds)
+      } else {
+        this.fruitIds = []
+        console.log(this.fruitIds)
+      }
+    },
+    deleteFruits () {
+      if(this.fruitIds.length > 0) {
+        this.fruitIds.map(index => {
+          console.log(index)
+          this.fruits.map(i => {
+            if (i.fruitId == index){
+              this.fruits.splice(i.fruitId,1)
+              this.fruitIds.splice(index,1)
+              this.newList=this.fruitIds;
+            }
+          })
+        })
+      }
     }
+
+  },
+  mounted(){
+    //初始化，把prolist赋值给newList。默认显示所有目标
+    this.newList=this.fruitIds;
   }
 }
 </script>
@@ -176,13 +252,91 @@ export default {
   background-color: #248dff;
   border: 1px solid #248dff;
 }
-.b-active{
-  display: none;
-}
-.display{
-  display: block;
-}
+
 .display1{
   display: none;
+}
+.check_css3.display{
+  display: block!important;
+}
+.check-box.display{
+  display: block!important;
+}
+.check-box{
+  display: none;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  height: 50px;
+  background-color: #ffffff;
+  box-shadow: 0 -2px 10px 0 rgba(103, 108, 114, 0.4);
+  z-index: 10;
+}
+.check-all {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  text-align: center;
+  line-height: 50px;
+  font-size: 17px;
+  color: #248dff;
+}
+.check-del {
+  position: absolute;
+  left: 50%;
+  top: 0;
+  width: 50%;
+  height: 100%;
+  line-height: 50px;
+  text-align: center;
+  color: #e06707;
+}
+.check-lie{
+  position: absolute;
+  left: 50%;
+  top: -50%;
+  width: 1px;
+  height: 200%;
+  background: #999;
+  transform: scale(.5);
+}
+.check_css3 {
+  display: none;
+  position: absolute;
+  right: 7px;
+  top: 4px;
+}
+.check_css3 span {
+  position: relative;
+}
+.check_css3 .input_check {
+  position: absolute;
+  visibility: hidden;
+}
+.check_css3 .input_check+label {
+  display: inline-block;
+  width: 16px;
+  height: 16px;
+  border: 1px solid #999;
+  background: #fff;
+  box-sizing: border-box;
+}
+.check_css3 .input_check:checked+label:after {
+  content: "";
+  position: absolute;
+  left: 3px;
+  bottom: 11px;
+  width: 9px;
+  height: 4px;
+  border: 2px solid #248dff;
+  border-top-color: transparent;
+  border-right-color: transparent;
+  -ms-transform: rotate(-60deg);
+  -moz-transform: rotate(-60deg);
+  -webkit-transform: rotate(-60deg);
+  transform: rotate(-45deg);
 }
 </style>

@@ -14,36 +14,39 @@
     </div>
     <div class="p10"></div>
     <div class="col-box">
-      <div class="col-l" v-for="(item, index) in productList" :key="index">
+      <div class="col-l" v-for="(item, index) in fruits" :key="index">
         <img :src="'static/img/index/'+item.img" alt="">
         <div class="col-name">
           {{item.name}}
           <div class="check_css3" :class="{display: aActive}">
-            <span class="col-icon" @click="item.select=!item.select" :class="{active: item.select}"></span>
+            <span><input type="checkbox" class="input_check" :checked="fruitIds.indexOf(item.fruitId) > -1" :id="'check'+item.fruitId"  @click='checkedOne(item.fruitId)' name="del" >
+              <label :for="'check'+item.fruitId"></label>
+            </span>
           </div>
         </div>
       </div>
     </div>
     <div class="check-box" :class="{display: aActive}">
-      <div class="check-all" @click='selectProduct(isSelectAll)'>全选</div>
-        <div class="check-del" @click="deleteProduct">删除({{getTotal.totalNum}})</div>
+      <div class="check-all" @click='checkedAll()'>全选</div>
+      <div class="check-del" @click="deleteFruits()">删除({{newList.length}})</div>
       <span class="check-lie"></span>
     </div>
-
+    <a-add></a-add>
   </div>
 </template>
 
 <script>
+import aAdd from './add'
 export default {
   components: {
-
+    aAdd
   },
   data () {
     return {
       isActive: false,
       aActive: false,
       bActive: true,
-      productList: [
+      fruits: [
         {
           fruitId:'0',
           img: 'program5.png',
@@ -74,20 +77,10 @@ export default {
           url: '/detail',
           name:'闯堂兔'
         }
-      ]
-    }
-  },
-  computed: {
-    isSelectAll () {
-      return this.productList.every(index => {
-        return index.select
-      })
-    },
-    getTotal () {
-      var _proList = this.productList.filter(val => {
-        return val.select
-      })
-      return { totalNum: _proList.length}
+      ],
+      fruitIds: [],
+      newList: [],
+      isCheckedAll: false
     }
   },
   methods: {
@@ -99,25 +92,51 @@ export default {
       item.state = !item.state;
       console.log(this.items);
     },
-    selectProduct (_isSelect) {
-      for (let i = 0, len = this.productList.length; i < len; i++) {
-        this.productList[i].select = !_isSelect
+    checkedOne (fruitId) {
+        let idIndex = this.fruitIds.indexOf(fruitId)
+        if (idIndex >= 0) {
+          // 如果已经包含了该id, 则去除(单选按钮由选中变为非选中状态)
+          this.fruitIds.splice(idIndex, 1)
+          console.log(this.fruitIds)
+        } else {
+          // 选中该checkbox
+          this.fruitIds.push(fruitId)
+          console.log(this.fruitIds)
+        }
+    },
+    checkedAll () {
+      this.isCheckedAll = !this.isCheckedAll
+      if (this.isCheckedAll) {
+        // 全选时
+        this.fruitIds = []
+        this.fruits.forEach(function (fruit) {
+          this.fruitIds.push(fruit.fruitId)
+        }, this)
+        console.log(this.fruitIds)
+      } else {
+        this.fruitIds = []
+        console.log(this.fruitIds)
       }
     },
-    deleteProduct () {
-      this.productList = this.productList.filter(item => {
-        return !item.select
-      })
-      if (this.productList.length === 0) {
-        this.aaActive()
+    deleteFruits () {
+      if(this.fruitIds.length > 0) {
+        this.fruitIds.map(index => {
+          console.log(index)
+          this.fruits.map(i => {
+            if (i.fruitId == index){
+              this.fruits.splice(i.fruitId,1)
+              this.fruitIds.splice(index,1)
+              this.newList=this.fruitIds;
+            }
+          })
+        })
       }
     }
+
   },
-  mounted () {
-    this.productList.map(item => {
-      this.$set(item, 'select', false)
-    })
-    console.log(this.productList)
+  mounted(){
+    //初始化，把prolist赋值给newList。默认显示所有目标
+    this.newList=this.fruitIds;
   }
 }
 </script>
@@ -286,6 +305,9 @@ export default {
 }
 .check_css3 {
   display: none;
+  position: absolute;
+  right: 7px;
+  top: 4px;
 }
 
 </style>

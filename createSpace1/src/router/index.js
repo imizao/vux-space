@@ -17,6 +17,8 @@ import aGift from '@/views/mine/gift'
 import Exchange from '@/views/mine/exchange'
 import Address from '@/views/mine/address'
 import Collection from '@/views/mine/collection'
+import Vip from '@/views/mine/vip'
+import myVideo from '@/views/mine/myvideo'
 
 Vue.use(Router)
 
@@ -107,6 +109,16 @@ export default new Router({
       path: '/collection',
       name: 'collection',
       component: Collection
+    },
+    {
+      path: '/vip',
+      name: 'vip',
+      component: Vip
+    },
+    {
+      path: '/myvideo',
+      name: 'myvideo',
+      component: myVideo
     },
     {
       path: '/mine',

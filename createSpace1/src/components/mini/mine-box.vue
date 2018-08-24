@@ -1,10 +1,10 @@
 <template>
   <div class="mine-box">
-    <div class="mine-icon"><img src="../../static/img/mine-icon1.png" alt=""></div>
+    <div class="mine-icon"><img src="static/img/mine-icon1.png" alt=""></div>
     <p class="mine-name">爱吃鱼的小猫</p>
     <div class="vip-box">
       <span class="vip-icon"></span>
-      <p class="vip-text">升级成为VIP</p>
+      <router-link to="/vip"><p class="vip-text">升级成为VIP</p></router-link>
     </div>
     <div class="num-box">
       2300
@@ -106,7 +106,7 @@ export default {
   top: 6px;
   width: 22px;
   height: 22px;
-  background: url('./../../static/img/vip-icon.png') no-repeat;
+  background: url('../../../static/img/vip-icon.png') no-repeat;
   background-size: 100%;
 }
 .num-box{

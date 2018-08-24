@@ -78,8 +78,10 @@ export default {
     }
   },
   computed: {
+    // 计算出每一个的select
     isSelectAll () {
       return this.productList.every(index => {
+        console.log(index.select)
         return index.select
       })
     },
@@ -95,15 +97,13 @@ export default {
       this.aActive = !this.aActive
       this.bActive = !this.bActive
     },
-    CheckItem: function(item){
-      item.state = !item.state;
-      console.log(this.items);
-    },
+    // 选择全部
     selectProduct (_isSelect) {
       for (let i = 0, len = this.productList.length; i < len; i++) {
         this.productList[i].select = !_isSelect
       }
     },
+    // 删除所选中的
     deleteProduct () {
       this.productList = this.productList.filter(item => {
         return !item.select
@@ -114,10 +114,10 @@ export default {
     }
   },
   mounted () {
+    // 给每个productList的元素添加 select 的属性
     this.productList.map(item => {
       this.$set(item, 'select', false)
     })
-    console.log(this.productList)
   }
 }
 </script>
@@ -205,6 +205,7 @@ export default {
   margin-left: 2%;
   height: auto;
   background: #fff;
+  margin-bottom: 10px;
 }
 .col-l img{
   display: block;

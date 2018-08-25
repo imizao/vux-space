@@ -24,6 +24,7 @@ export default {
   text-align: center;
   background: #fff;
   box-shadow: 0 1px 5px 0 rgba(103, 108, 114, 0.4);
+  
 }
 .p-box{
   position: relative;

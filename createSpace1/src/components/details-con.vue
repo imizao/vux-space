@@ -29,13 +29,11 @@ export default {
     }
   },
   created () {
-    console.log(`create`)
     this.getBarWidth(this.num)
   },
   methods: {
     getBarWidth(num) {
       this.length = num * 137 + (num - 1) * 5
-      console.log(this.length)
       return this.length
     }
   }

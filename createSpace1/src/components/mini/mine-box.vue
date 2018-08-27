@@ -67,6 +67,7 @@ export default {
   width: 100%;
   height: 275px;
   background-image: linear-gradient(to bottom, #7eceff, #248dff);
+  overflow: hidden;
 }
 .mine-icon {
   position: absolute;

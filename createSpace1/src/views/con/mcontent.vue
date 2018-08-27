@@ -2,7 +2,7 @@
   <div>
     <div >
       <div class="p10"></div>
-      <flexbox :gutter="5" v-for="(item, index) in data" :key="index">
+      <flexbox :gutter="5" v-for="(item, index) in aData" :key="index" style="margin-bottom:10px;overflow: hidden;">
         <flexbox-item :span="6" v-for="(m, n) in item.data" :key="n">
           <b-content :data="m"></b-content>
         </flexbox-item>
@@ -15,6 +15,66 @@
 <script>
 import { Flexbox, FlexboxItem } from 'vux'
 import bContent from '@/components/bcontent'
+
+const aData =[
+    {
+      "data": [
+        {
+          "img": "program5.png",
+          "name": "闯堂兔",
+          "url": "/details"
+        },
+        {
+          "img": "program6.png",
+          "name": "玩具总动员",
+          "url": "/details"
+        }
+      ]
+    },
+    {
+      "data": [
+        {
+          "img": "program7.png",
+          "name": "东南特卫队",
+          "url": "/details"
+        },
+        {
+          "img": "program8.png",
+          "name": "吃饭睡觉打豆豆",
+          "url": "/details"
+        }
+      ]
+    },
+    {
+      "data": [
+        {
+          "img": "program9.png",
+          "name": "教学视频",
+          "url": "/details"
+        },
+        {
+          "img": "program10.png",
+          "name": "天天成长记",
+          "url": "/details"
+        }
+      ]
+    },
+    {
+      "data": [
+        {
+          "img": "program11.png",
+          "name": "闯堂兔",
+          "url": "/details"
+        },
+        {
+          "img": "program12.png",
+          "name": "闯堂兔",
+          "url": "/details"
+        }
+      ]
+    }
+  ]
+
 export default {
   components: {
     Flexbox,
@@ -24,6 +84,7 @@ export default {
   data () {
     return {
       data: '',
+      aData: aData,
       aLength: 0
     }
   },
@@ -46,11 +107,7 @@ export default {
 </script>
 
 <style scoped>
-.p10{
-  width: 100%;
-  height: 10px;
-  background: #f0f3f7;
-}
+
 .con-img img{
   width: 100%;
 }

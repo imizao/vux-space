@@ -17,7 +17,7 @@ export default {
   data () {
     return {
       videoList: ['http://www.isjs.net/feiyu.mp4','http://www.isjs.net/720720.mp4','http://www.isjs.net/a1920.mp4','http://www.isjs.net/7201920.mp4', 'http://1256976636.vod2.myqcloud.com/20d64332vodgzp1256976636/1af5fd787447398156965268702/f0.mp4'],
-      videoUrl: 'http://1256976636.vod2.myqcloud.com/20d64332vodgzp1256976636/1af5fd787447398156965268702/f0.mp4'
+      videoUrl: 'http://1256976636.vod2.myqcloud.com/20d64332vodgzp1256976636/436376b75285890781445053789/iQ6Fa2yoWq4A.mp4'
     }
   },
   methods: {

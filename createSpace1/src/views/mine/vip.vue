@@ -29,6 +29,7 @@
       微信支付：<span class="flex-span">￥20.0</span>
       <div class="flex-int">立即支付</div>
     </div>
+    <div class="p100"></div>
   </div>
 </template>
 
@@ -233,5 +234,9 @@ export default {
   text-align: center;
   line-height: 50px;
   color: #fff;
+}
+.p100{
+  width: 100%;
+  height: 600px;
 }
 </style>

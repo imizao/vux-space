@@ -18,6 +18,7 @@
       <cell title="我的视频" value="录制视频共享至电视" is-link link="/myvideo">
         <img slot="icon" width="40" height="40" style="display:block;margin-right:5px;" src="static/img/my-video.png" alt="">
       </cell>
+      <div class="p50"></div>
     </group>
   </div>
 </template>
@@ -47,5 +48,9 @@ export default {
 .me .weui-cell_access .weui-cell__ft{
   font-size: 12px;
   color: #999999;
+}
+.p30{
+  width: 100%;
+  height: 50px;
 }
 </style>

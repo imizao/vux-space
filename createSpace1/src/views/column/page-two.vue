@@ -1,9 +1,11 @@
 <template>
   <div>
-    <flexbox :gutter="5" v-for="(item, index) in data" :key="index">
+    <div class="p10"></div>
+    <flexbox :gutter="5" v-for="(item, index) in data" :key="index" style="margin-bottom:10px;overflow: hidden;">
       <flexbox-item :span="6" v-for="(m, n) in item.data" :key="n">
         <b-content :data="m"></b-content>
       </flexbox-item>
+
     </flexbox>
     <div class="p10"></div>
   </div>
@@ -132,9 +134,7 @@ export default {
 </script>
 
 <style scoped>
-.p10{
-  width: 100%;
-  height: 10px;
-  background: #f0f3f7;
+.a{
+  overflow: hidden;
 }
 </style>

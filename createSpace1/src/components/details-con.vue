@@ -1,7 +1,7 @@
 <template>
   <div class="detail">
     <group>
-      <cell title="剧集" value="更多" is-link></cell>
+      <cell title="剧集" ></cell>
     </group>
     <scroller lock-y scrollbar-x>
       <div class="box1" v-bind:style="{'width': length+'px'}">

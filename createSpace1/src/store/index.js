@@ -4,8 +4,6 @@ import Vuex from 'vuex'
 Vue.use(Vuex)
 
 const state = {
-  jinwen: 0,
-  name: 'lai jin wen',
   count: 0
 }
 
@@ -18,7 +16,7 @@ const mutations = {
   increment (state) {
     state.count = state.count + 5
   },
-  decrememt (state) {
+  decrement (state) {
     state.count = state.count - 3
   }
 }

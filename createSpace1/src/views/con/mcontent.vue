@@ -92,17 +92,18 @@ export default {
     this.$http.get('/index')
     .then(response => {
       this.data = response.data.data
-      console.log(this.data)
       this.aLength = this.data.length / 2
-      console.log(this.data.length)
+      // console.log(this.data.length)
     })
     .catch(function (code) {
       console.log(code)
     })
   },
-   created: function () {
-    cookie.set('tab', 0)
-    console.log(cookie.get('tab'))
+  created: function () {
+    sessionStorage.setItem('tab', 0)
+    this.$store.state.count = sessionStorage.getItem('tab')
+    console.log('cookie'+sessionStorage.getItem('tab'))
+    console.log(`this.$store.state.count ${this.$store.state.count}`)
   },
   methods: {
 

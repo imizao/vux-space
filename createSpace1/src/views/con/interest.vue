@@ -142,12 +142,15 @@ export default {
     this.$http.get('/scientific')
     .then(response => {
       this.data = response.data.data
-      console.log(this.data)
     })
     .catch(function (code) {
       console.log(code)
     })
   },
+  created: function () {
+    sessionStorage.setItem('tab', 2)
+    this.$store.state.count = sessionStorage.getItem('tab')
+  }
 }
 </script>
 

@@ -34,6 +34,8 @@
 </template>
 
 <script>
+import {mapGetters, mapActions } from 'vuex'
+
 const aData = [
   {
     month: '12个月',
@@ -71,7 +73,14 @@ export default {
     return {
       data: aData
     }
-  }
+  },
+  computed: mapGetters([
+
+  ]),
+  methods: mapActions([
+    'increment',
+    'decrement'
+  ])
 }
 </script>
 

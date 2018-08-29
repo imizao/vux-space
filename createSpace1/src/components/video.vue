@@ -1,7 +1,8 @@
 <template>
    <div class="page page-current courseInfo">
         <div id="J_prismPlayer" >
-          <video id="video1" controls="controls" :src="videoUrl" preload="auto" playsinline="" x-webkit-airplay="allow" x5-video-player-type="h5"  x5-video-player-fullscreen="true" x5-video-orientation="portraint" width="100%" height="100%" webkit-playsinline="true" playsinline="true" autoplay="true" >
+          <video id="video1" controls="controls" :src="videoUrl" preload="auto" playsinline="" x-webkit-airplay="allow" x5-video-player-type="h5"  x5-video-player-fullscreen="true" x5-video-orientation="portraint" width="100%" height="100%" webkit-playsinline="true"  autoplay="true" >
+            <!-- playsinline="true" -->
             Your browser does not support the video tag.
           </video >
         </div>

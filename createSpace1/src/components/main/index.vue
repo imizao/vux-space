@@ -10,6 +10,7 @@
 </template>
 
 <script>
+import { cookie } from 'vux'
  import aHead from '@/components/header'
  import aTab from '@/components/tab'
  import aSwiper from '@/components/swiper'

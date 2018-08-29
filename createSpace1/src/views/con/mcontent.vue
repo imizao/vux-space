@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import { Flexbox, FlexboxItem } from 'vux'
+import { Flexbox, FlexboxItem, cookie } from 'vux'
 import bContent from '@/components/bcontent'
 
 const aData =[
@@ -99,6 +99,10 @@ export default {
     .catch(function (code) {
       console.log(code)
     })
+  },
+   created: function () {
+    cookie.set('tab', 0)
+    console.log(cookie.get('tab'))
   },
   methods: {
 

@@ -73,19 +73,19 @@ import { XTextarea, Group, XInput } from 'vux'
 
 const videoData = [
   {
-    url: 'http://www.isjs.net/gjzncydjsxcp2018.mp4',
+    url: 'http://www.isjs.net/456.mp4',
     title: '我是一个标题',
     con: '我是一个简介内容',
     start: '2'
   },
   {
-    url: 'http://www.isjs.net/gjzncydjsxcp2018.mp4',
+    url: 'http://www.isjs.net/456.mp4',
     title: '我是一个标题',
     con: '我是一个简介内容',
     start: '1'
   },
   {
-    url: 'http://www.isjs.net/gjzncydjsxcp2018.mp4',
+    url: 'http://www.isjs.net/456.mp4',
     title: '我是一个标题1',
     con: '我是一个简介内容2',
     start: '0'
@@ -105,7 +105,7 @@ export default {
       name: '我的视频',
       active: false,
       url: '',
-      videoUrl: 'http://www.isjs.net/gjzncydjsxcp2018.mp4',
+      videoUrl: 'http://www.isjs.net/456.mp4',
       videoData: videoData
     }
   },

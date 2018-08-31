@@ -12,7 +12,7 @@ export default {
   data () {
     return {
       videoList: ['http://www.isjs.net/feiyu.mp4','http://www.isjs.net/720720.mp4','http://www.isjs.net/a1920.mp4','http://www.isjs.net/gjzncydjsxcp2018.mp4'],
-      videoUrl: 'http://www.isjs.net/gjzncydjsxcp2018.mp4'
+      videoUrl: 'http://www.isjs.net/456.mp4'
     }
   },
   methods: {

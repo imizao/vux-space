@@ -1,7 +1,7 @@
 <template>
    <div class="page page-current courseInfo">
         <div id="J_prismPlayer" >
-          <video id="video1" controls="controls" :src="videoUrl" preload="auto" playsinline="" x-webkit-airplay="allow" x5-video-player-type="h5"  x5-video-player-fullscreen="true" x5-video-orientation="portraint" width="100%" height="100%" webkit-playsinline="true"  autoplay="true" >
+          <video id="video" controls="controls" :src="videoUrl" preload="auto" playsinline="" x-webkit-airplay="allow" x5-video-player-type="h5"  x5-video-player-fullscreen="true" x5-video-orientation="portraint" width="100%" height="100%" webkit-playsinline="true"  autoplay="true" >
             Your browser does not support the video tag.
           </video >
         </div>
@@ -12,13 +12,26 @@ export default {
   data () {
     return {
       videoList: ['http://www.isjs.net/feiyu.mp4','http://www.isjs.net/720720.mp4','http://www.isjs.net/a1920.mp4','http://www.isjs.net/gjzncydjsxcp2018.mp4'],
-      videoUrl: 'http://www.isjs.net/456.mp4'
+      videoUrl: 'http://www.isjs.net/456.mp4',
+      aTime: ''
     }
   },
   methods: {
-    aClick (index) {
-      this.videoUrl = this.videoList[index]
+    videoPlay () {
+      var aVideo = document.getElementById('video')
+      this.aTime = aVideo.currentTime
+    },
+    timeupdate () {
+      var aVideo = document.getElementById('video')
+      this.aTime = parseInt(aVideo.currentTime)
+      if (this.aTime >= 10) {
+        aVideo.pause()
+      }
     }
+  },
+  mounted () {
+    var aVideo = document.getElementById('video')
+    aVideo.addEventListener('timeupdate', this.timeupdate)
   }
 }
 </script>

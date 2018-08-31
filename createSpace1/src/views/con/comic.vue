@@ -20,109 +20,109 @@ import { Group, Cell, Flexbox, FlexboxItem } from 'vux'
 import bContent from '@/components/bcontent'
 
 const aData = [
-    {
-      "title": "热播动漫1",
-      "url": "/p1",
-      "data": [
-        {
-          "data": [
-            {
-              "img": "program14.png",
-              "name": "闯堂兔",
-              "url": "/details"
-            },
-            {
-              "img": "program7.png",
-              "name": "闯堂兔1",
-              "url": "/details"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "img": "program10.png",
-              "name": "闯堂兔2",
-              "url": "/details"
-            },
-            {
-              "img": "program12.png",
-              "name": "闯堂兔3",
-              "url": "/details"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "热播动漫2",
-      "url": "/p2",
-      "data": [
-        {
-          "data": [
-            {
-              "img": "program9.png",
-              "name": "闯堂兔4",
-              "url": "/details"
-            },
-            {
-              "img": "program10.png",
-              "name": "闯堂兔5",
-              "url": "/details"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "img": "program11.png",
-              "name": "闯堂兔6",
-              "url": "/details"
-            },
-            {
-              "img": "program12.png",
-              "name": "闯堂兔7",
-              "url": "/details"
-            }
-          ]
-        }
-      ]
-    },
-    {
-      "title": "热播动漫3",
-      "url": "/p3",
-      "data": [
-        {
-          "data": [
-            {
-              "img": "program13.png",
-              "name": "闯堂兔8",
-              "url": "/details"
-            },
-            {
-              "img": "program14.png",
-              "name": "闯堂兔9",
-              "url": "/details"
-            }
-          ]
-        },
-        {
-          "data": [
-            {
-              "img": "program15.png",
-              "name": "闯堂兔10",
-              "url": "/details"
-            },
-            {
-              "img": "program16.png",
-              "name": "闯堂兔11",
-              "url": "/details"
-            }
-          ]
-        }
-      ]
-    }
-  ]
+  {
+    title: '热播动漫1',
+    url: '/p1',
+    data: [
+      {
+        data: [
+          {
+            img: 'program14.png',
+            name: '闯堂兔',
+            url: '/details'
+          },
+          {
+            img: 'program7.png',
+            name: '闯堂兔1',
+            url: '/details'
+          }
+        ]
+      },
+      {
+        data: [
+          {
+            img: 'program10.png',
+            name: '闯堂兔2',
+            url: '/details'
+          },
+          {
+            img: 'program12.png',
+            name: '闯堂兔3',
+            url: '/details'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: '热播动漫2',
+    url: '/p2',
+    data: [
+      {
+        data: [
+          {
+            img: 'program9.png',
+            name: '闯堂兔4',
+            url: '/details'
+          },
+          {
+            img: 'program10.png',
+            name: '闯堂兔5',
+            url: '/details'
+          }
+        ]
+      },
+      {
+        data: [
+          {
+            img: 'program11.png',
+            name: '闯堂兔6',
+            url: '/details'
+          },
+          {
+            img: 'program12.png',
+            name: '闯堂兔7',
+            url: '/details'
+          }
+        ]
+      }
+    ]
+  },
+  {
+    title: '热播动漫3',
+    url: '/p3',
+    data: [
+      {
+        data: [
+          {
+            img: 'program13.png',
+            name: '闯堂兔8',
+            url: '/details'
+          },
+          {
+            img: 'program14.png',
+            name: '闯堂兔9',
+            url: '/details'
+          }
+        ]
+      },
+      {
+        data: [
+          {
+            img: 'program15.png',
+            name: '闯堂兔1',
+            url: '/details'
+          },
+          {
+            img: 'program16.png',
+            name: '闯堂兔1',
+            url: '/details'
+          }
+        ]
+      }
+    ]
+  }
+]
 
 export default {
   components: {
@@ -138,57 +138,58 @@ export default {
       aData: aData
     }
   },
-  beforeCreate () {
-    this.$http.get('/scientific')
-    .then(response => {
-      this.data = response.data.data
-    })
-    .catch(function (code) {
-      console.log(code)
-    })
+  beforeCreate () {
+    this.$http
+      .get("/scientific")
+      .then(response => {
+        this.data = response.data.data
+      })
+      .catch(function(code) {
+        console.log(code)
+      })
   },
-  created: function () {
-    sessionStorage.setItem('tab', 1)
-    this.$store.state.count = sessionStorage.getItem('tab')
+  created: function() {
+    sessionStorage.setItem("tab", 1)
+    this.$store.state.count = sessionStorage.getItem("tab")
   }
 }
 </script>
 
 <style>
-.comic .weui-cell{
+.comic .weui-cell {
   padding: 0;
 }
-.comic .weui-cells{
+.comic .weui-cells {
   position: relative;
   padding: 0px 10px 0 45px;
   margin-top: 10px;
   height: 40px;
   line-height: 40px;
 }
-.comic .weui-cell_access .weui-cell__ft{
+.comic .weui-cell_access .weui-cell__ft {
   font-size: 12px;
 }
-.comic .icon1{
+.comic .icon1 {
   position: absolute;
   left: 10px;
   top: 12px;
   width: 30px;
   height: 17px;
-  background: url('../../../static/img/decoration1.png') no-repeat;
+  background: url("../../../static/img/decoration1.png") no-repeat;
   background-size: 100%;
 }
 
-.con-img img{
+.con-img img {
   width: 100%;
 }
-.con-p{
+.con-p {
   height: 23px;
   line-height: 19px;
   font-size: 14px;
   text-indent: 10px;
   color: #333;
 }
-.vux-flex-row{
+.vux-flex-row {
   overflow-x: hidden;
   background: #fff;
 }

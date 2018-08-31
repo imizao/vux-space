@@ -11,46 +11,46 @@
 </template>
 
 <script>
-import { Flexbox, FlexboxItem} from 'vux'
+import { Flexbox, FlexboxItem } from 'vux'
 import bContent from '@/components/bcontent'
 import aHeader from '@/components/mini/header'
 
 const aData = {
-  "data": [
+  'data': [
     {
-      "img": "program5.png",
-      "name": "闯堂兔",
-      "url": "/details"
+      'img': 'program5.png',
+      'name': '闯堂兔',
+      'url': '/details'
     },
     {
-      "img": "program5.png",
-      "name": "闯堂兔",
-      "url": "/details"
+      'img': 'program5.png',
+      'name': '闯堂兔',
+      'url': '/details'
     },
     {
-      "img": "program5.png",
-      "name": "闯堂兔",
-      "url": "/details"
+      'img': 'program5.png',
+      'name': '闯堂兔',
+      'url': '/details'
     },
     {
-      "img": "program5.png",
-      "name": "闯堂兔",
-      "url": "/details"
+      'img': 'program5.png',
+      'name': '闯堂兔',
+      'url': '/details'
     },
     {
-      "img": "program5.png",
-      "name": "闯堂兔",
-      "url": "/details"
+      'img': 'program5.png',
+      'name': '闯堂兔',
+      'url': '/details'
     },
     {
-      "img": "program5.png",
-      "name": "闯堂兔",
-      "url": "/details"
+      'img': 'program5.png',
+      'name': '闯堂兔',
+      'url': '/details'
     },
     {
-      "img": "program6.png",
-      "name": "玩具总动员",
-      "url": "/details"
+      'img': 'program6.png',
+      'name': '玩具总动员',
+      'url': '/details'
     }
   ]
 }
@@ -68,17 +68,17 @@ export default {
       isActive: false
     }
   },
-  created() {
+  created () {
 
   },
   methods: {
     Active () {
       let index = target.getAttribute("data-index")
       if ( index % 3 === 0) {
-          return this.isActive = true
-        } else {
-          return this.isActive = false
-        }
+        return this.isActive = true
+      } else {
+        return this.isActive = false
+      }
     }
   }
 }

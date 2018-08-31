@@ -7,7 +7,7 @@ import App from './App'
 import router from './router/index'
 import store from './store/index'
 
-Vue.prototype.$http= axios
+Vue.prototype.$http = axios
 FastClick.attach(document.body)
 
 Vue.config.productionTip = false

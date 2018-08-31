@@ -14,7 +14,7 @@
 
 <script>
 import aHeader from '@/components/mini/header'
-import { Group, XInput, ChinaAddressData, XAddress, XTextarea} from 'vux'
+import { Group, XInput, ChinaAddressData, XAddress, XTextarea } from 'vux'
 
 export default {
   components: {

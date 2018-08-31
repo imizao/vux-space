@@ -27,32 +27,32 @@ import DetailsCon from '@/components/details-con'
 import bContent from '@/components/bcontent'
 
 const aData = {
-  "data": [
+  'data': [
     {
-      "data": [
+      'data': [
         {
-          "img": "program5.png",
-          "name": "闯堂兔",
-          "url": "/details"
+          'img': 'program5.png',
+          'name': '闯堂兔',
+          'url': '/details'
         },
         {
-          "img": "program6.png",
-          "name": "玩具总动员",
-          "url": "/details"
+          'img': 'program6.png',
+          'name': '玩具总动员',
+          'url': '/details'
         }
       ]
     },
     {
-      "data": [
+      'data': [
         {
-          "img": "program7.png",
-          "name": "东南特卫队",
-          "url": "/details"
+          'img': 'program7.png',
+          'name': '东南特卫队',
+          'url': '/details'
         },
         {
-          "img": "program8.png",
-          "name": "吃饭睡觉打豆豆",
-          "url": "/details"
+          'img': 'program8.png',
+          'name': '吃饭睡觉打豆豆',
+          'url': '/details'
         }
       ]
     }
@@ -76,8 +76,8 @@ export default {
       data: aData.data
     }
   },
-  created() {
-    console.log(this.data);
+  created () {
+    console.log(this.data)
   },
 }
 </script>

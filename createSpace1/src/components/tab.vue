@@ -39,7 +39,7 @@
 </template>
 
 <script>
-import { Tab, TabItem, cookie } from 'vux'
+import { Tab, TabItem } from 'vux'
 
 export default {
   components: {

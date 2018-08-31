@@ -21,102 +21,102 @@ import bContent from '@/components/bcontent'
 
 const aData = [
     {
-      "title": "热播动漫1",
-      "url": "/p1",
-      "data": [
+      'title': '热播动漫1',
+      'url': '/p1',
+      'data': [
         {
-          "data": [
+          'data': [
             {
-              "img": "program10.png",
-              "name": "闯堂兔",
-              "url": "/details"
+              'img': 'program10.png',
+              'name': '闯堂兔',
+              'url': '/details'
             },
             {
-              "img": "program11.png",
-              "name": "闯堂兔1",
-              "url": "/details"
+              'img': 'program11.png',
+              'name': '闯堂兔1',
+              'url': '/details'
             }
           ]
         },
         {
-          "data": [
+          'data': [
             {
-              "img": "program9.png",
-              "name": "闯堂兔2",
-              "url": "/details"
+              'img': 'program9.png',
+              'name': '闯堂兔2',
+              'url': '/details'
             },
             {
-              "img": "program6.png",
-              "name": "闯堂兔3",
-              "url": "/details"
+              'img': 'program6.png',
+              'name': '闯堂兔3',
+              'url': '/details'
             }
           ]
         }
       ]
     },
     {
-      "title": "热播动漫2",
-      "url": "/p2",
-      "data": [
+      'title': '热播动漫2',
+      'url': '/p2',
+      'data': [
         {
-          "data": [
+          'data': [
             {
-              "img": "program9.png",
-              "name": "闯堂兔4",
-              "url": "/details"
+              'img': 'program9.png',
+              'name': '闯堂兔4',
+              'url': '/details'
             },
             {
-              "img": "program10.png",
-              "name": "闯堂兔5",
-              "url": "/details"
+              'img': 'program10.png',
+              'name': '闯堂兔5',
+              'url': '/details'
             }
           ]
         },
         {
-          "data": [
+          'data': [
             {
-              "img": "program11.png",
-              "name": "闯堂兔6",
-              "url": "/details"
+              'img': 'program11.png',
+              'name': '闯堂兔6',
+              'url': '/details'
             },
             {
-              "img": "program12.png",
-              "name": "闯堂兔7",
-              "url": "/details"
+              'img': 'program12.png',
+              'name': '闯堂兔7',
+              'url': '/details'
             }
           ]
         }
       ]
     },
     {
-      "title": "热播动漫3",
-      "url": "/p3",
-      "data": [
+      'title': '热播动漫3',
+      'url': '/p3',
+      'data': [
         {
-          "data": [
+          'data': [
             {
-              "img": "program13.png",
-              "name": "闯堂兔8",
-              "url": "/details"
+              'img': 'program13.png',
+              'name': '闯堂兔8',
+              'url': '/details'
             },
             {
-              "img": "program14.png",
-              "name": "闯堂兔9",
-              "url": "/details"
+              'img': 'program14.png',
+              'name': '闯堂兔9',
+              'url': '/details'
             }
           ]
         },
         {
-          "data": [
+          'data': [
             {
-              "img": "program15.png",
-              "name": "闯堂兔10",
-              "url": "/details"
+              'img': 'program15.png',
+              'name': '闯堂兔1',
+              'url': '/details'
             },
             {
-              "img": "program16.png",
-              "name": "闯堂兔11",
-              "url": "/details"
+              'img': 'program16.png',
+              'name': '闯堂兔1',
+              'url': '/details'
             }
           ]
         }

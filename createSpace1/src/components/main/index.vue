@@ -11,10 +11,10 @@
 </template>
 
 <script>
-import { cookie } from "vux";
-import aHead from "@/components/header";
-import aTab from "@/components/tab";
-import aSwiper from "@/components/swiper";
+import { cookie } from 'vux'
+import aHead from '@/components/header'
+import aTab from '@/components/tab'
+import aSwiper from '@/components/swiper'
 
 export default {
   components: {
@@ -24,18 +24,18 @@ export default {
   },
   data() {
     return {
-      transitionName: "slide-left"
-    };
+      transitionName: 'slide-left'
+    }
   },
   watch: {
     $route(to, from) {
-      let isBack = this.$router.isBack; //  监听路由变化时的状态为前进还是后退
+      let isBack = this.$router.isBack //  监听路由变化时的状态为前进还是后退
       if (isBack) {
-        this.transitionName = "slide-right";
+        this.transitionName = 'slide-right'
       } else {
-        this.transitionName = "slide-left";
+        this.transitionName = 'slide-left'
       }
-      this.$router.isBack = false;
+      this.$router.isBack = false
     }
   }
 };

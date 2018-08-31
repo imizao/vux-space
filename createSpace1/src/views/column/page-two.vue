@@ -16,108 +16,108 @@ import { Flexbox, FlexboxItem } from 'vux'
 import bContent from '@/components/bcontent'
 
 const aData = {
-  "data": [
+  'data': [
     {
-      "data": [
+      'data': [
         {
-          "img": "program5.png",
-          "name": "闯堂兔",
-          "url": "/details"
+          'img': 'program9.png',
+          'name': '闯堂兔',
+          'url': '/details'
         },
         {
-          "img": "program6.png",
-          "name": "玩具总动员",
-          "url": "/details"
+          'img': 'program10.png',
+          'name': '玩具总动员',
+          'url': '/details'
         }
       ]
     },
     {
-      "data": [
+      'data': [
         {
-          "img": "program11.png",
-          "name": "东南特卫队",
-          "url": "/details"
+          'img': 'program7.png',
+          'name': '东南特卫队',
+          'url': '/details'
         },
         {
-          "img": "program10.png",
-          "name": "天天成长记",
-          "url": "/details"
+          'img': 'program8.png',
+          'name': '吃饭睡觉打豆豆',
+          'url': '/details'
         }
       ]
     },
     {
-      "data": [
+      'data': [
         {
-          "img": "program17.png",
-          "name": "少年师爷",
-          "url": "/details"
+          'img': 'program15.png',
+          'name': '欢乐之城',
+          'url': '/details'
         },
         {
-          "img": "program18.png",
-          "name": "蛋计划",
-          "url": "/details"
+          'img': 'program14.png',
+          'name': '吃饭睡觉打豆豆',
+          'url': '/details'
         }
       ]
     },
     {
-      "data": [
+      'data': [
         {
-          "img": "program7.png",
-          "name": "东南特卫队",
-          "url": "/details"
+          'img': 'program13.png',
+          'name': '教学作品',
+          'url': '/details'
         },
         {
-          "img": "program8.png",
-          "name": "吃饭睡觉打豆豆",
-          "url": "/details"
+          'img': 'program12.png',
+          'name': '吃饭睡觉打豆豆',
+          'url': '/details'
         }
       ]
     },
     {
-      "data": [
+      'data': [
         {
-          "img": "program15.png",
-          "name": "欢乐之城",
-          "url": "/details"
+          'img': 'program11.png',
+          'name': '东南特卫队',
+          'url': '/details'
         },
         {
-          "img": "program14.png",
-          "name": "吃饭睡觉打豆豆",
-          "url": "/details"
+          'img': 'program10.png',
+          'name': '天天成长记',
+          'url': '/details'
         }
       ]
     },
     {
-      "data": [
+      'data': [
         {
-          "img": "program13.png",
-          "name": "教学作品",
-          "url": "/details"
+          'img': 'program17.png',
+          'name': '少年师爷',
+          'url': '/details'
         },
         {
-          "img": "program12.png",
-          "name": "吃饭睡觉打豆豆",
-          "url": "/details"
+          'img': 'program18.png',
+          'name': '蛋计划',
+          'url': '/details'
         }
       ]
     },
-
     {
-      "data": [
+      'data': [
         {
-          "img": "program16.png",
-          "name": "东南特卫队",
-          "url": "/details"
+          'img': 'program16.png',
+          'name': '东南特卫队',
+          'url': '/details'
         },
         {
-          "img": "program15.png",
-          "name": "欢乐之城",
-          "url": "/details"
+          'img': 'program15.png',
+          'name': '欢乐之城',
+          'url': '/details'
         }
       ]
     }
   ]
 }
+
 
 export default {
   components: {

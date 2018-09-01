@@ -75,7 +75,6 @@ export default {
     }
   },
   computed: mapGetters([
-
   ]),
   methods: mapActions([
     'increment',

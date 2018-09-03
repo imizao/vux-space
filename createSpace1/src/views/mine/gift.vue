@@ -14,6 +14,7 @@
         </div>
       </flexbox-item>
     </flexbox>
+
     <div class="p10"></div>
   </div>
 </template>
@@ -89,13 +90,32 @@ export default {
   data () {
     return {
       name: '兑换商品',
-      data: aData
+      data: aData,
+      showHideOnBlur: false
     }
   }
 }
 </script>
 
 <style scoped>
+
+.dialog-demo .weui-dialog{
+    border-radius: 8px;
+    padding-bottom: 8px;
+  }
+.dialog-demo .dialog-title {
+    line-height: 30px;
+    color: #666;
+  }
+.dialog-demo   .img-box {
+    height: 350px;
+    overflow: hidden;
+  }
+.dialog-demo .vux-close {
+    margin-top: 8px;
+    margin-bottom: 8px;
+  }
+
 .p10 {
   width: 100%;
   height: 10px;

@@ -66,6 +66,13 @@ export default {
     } else {
       this.$store.state.count = sessionStorage.getItem('tab')
     }
+    // this.$http.get('/api/home/Category/query/?o=c_sort&pid__exact=0')
+    // .then(response => {
+    //   console.log(response)
+    // })
+    // .catch(function (code) {
+    //   console.log(code)
+    // })
   },
   methods: {
     onItemClick (tab) {

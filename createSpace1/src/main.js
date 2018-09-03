@@ -7,6 +7,7 @@ import App from './App'
 import router from './router/index'
 import store from './store/index'
 
+// axios.defaults.baseURL="http://10.14.50.162:9000"
 Vue.prototype.$http = axios
 FastClick.attach(document.body)
 

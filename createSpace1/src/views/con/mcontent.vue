@@ -2,9 +2,9 @@
   <div>
     <div >
       <div class="p10"></div>
-      <flexbox :gutter="5" v-for="(item, index) in aData" :key="index" style="margin-bottom:10px;overflow: hidden;">
+      <flexbox :gutter="5" v-for="(item, index) in bData" :key="index" style="margin-bottom:10px;overflow: hidden;">
         <flexbox-item :span="6" v-for="(m, n) in item.data" :key="n">
-          <b-content :data="m"></b-content>
+          <b-content :data="m"  ></b-content>
         </flexbox-item>
       </flexbox>
     </div>
@@ -20,41 +20,13 @@ const aData =[
     {
       'data': [
         {
-          'img': 'program5.png',
+          'img': 'program11.png',
           'name': '闯堂兔',
           'url': '/details'
         },
         {
-          'img': 'program6.png',
-          'name': '玩具总动员',
-          'url': '/details'
-        }
-      ]
-    },
-    {
-      'data': [
-        {
-          'img': 'program7.png',
-          'name': '东南特卫队',
-          'url': '/details'
-        },
-        {
-          'img': 'program8.png',
-          'name': '吃饭睡觉打豆豆',
-          'url': '/details'
-        }
-      ]
-    },
-    {
-      'data': [
-        {
-          'img': 'program9.png',
-          'name': '教学视频',
-          'url': '/details'
-        },
-        {
-          'img': 'program10.png',
-          'name': '天天成长记',
+          'img': 'program12.png',
+          'name': '闯堂兔',
           'url': '/details'
         }
       ]
@@ -72,7 +44,8 @@ const aData =[
           'url': '/details'
         }
       ]
-    }
+    },
+
   ]
 
 export default {
@@ -84,20 +57,20 @@ export default {
   data () {
     return {
       data: '',
-      aData: aData,
+      bData: aData,
       aLength: 0
     }
   },
   beforeCreate () {
-    this.$http.get('/index')
-    .then(response => {
-      this.data = response.data.data
-      this.aLength = this.data.length / 2
-      // console.log(this.data.length)
-    })
-    .catch(function (code) {
-      console.log(code)
-    })
+    // this.$http.get('/index')
+    // .then(response => {
+    //   this.data = response.data.data
+    //   this.aLength = this.data.length / 2
+    //   // console.log(this.data.length)
+    // })
+    // .catch(function (code) {
+    //   console.log(code)
+    // })
   },
   created: function () {
     sessionStorage.setItem('tab', 0)

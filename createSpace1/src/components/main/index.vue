@@ -4,9 +4,6 @@
     <a-tab></a-tab>
     <a-swiper></a-swiper>
     <router-view></router-view>
-    <transition :name="transitionName">
-      <router-view></router-view>
-    </transition>
   </div>
 </template>
 
